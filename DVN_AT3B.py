@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
+import zipfile
+import os
 
 # Suppress warnings
 import warnings
@@ -15,7 +17,23 @@ st.markdown("<h1 style='text-align: center;'>EXPLORING MENTAL HEALTH HELP-SEEKIN
 st.image("banner2.png", use_column_width=False, width = 1200) 
 
 # Load data
-df = pd.read_csv("Final_Data.csv")
+import zipfile
+import os
+
+# Path to the uploaded zip file
+zip_file_path = "Final_Data.csv.zip"
+extract_folder = "data"
+
+# Ensure the directory exists
+if not os.path.exists(extract_folder):
+    os.makedirs(extract_folder)
+
+# Unzip the file
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+    zip_ref.extractall(extract_folder)
+
+# Load the CSV from the extracted folder
+df = pd.read_csv(os.path.join(extract_folder, "Final_Data.csv"))
 
 # Extract Year from Timestamp
 df['Timestamp'] = pd.to_datetime(df['Timestamp'], errors='coerce')
