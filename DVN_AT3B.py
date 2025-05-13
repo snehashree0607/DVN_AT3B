@@ -16,7 +16,7 @@ st.set_page_config(layout="wide")
 
 # Title and banner
 st.markdown("<h1 style='text-align: center;'>EXPLORING MENTAL HEALTH HELP-SEEKING JOURNEY</h1>", unsafe_allow_html=True)
-st.image("banner2.png", use_column_width=False, width = 1200) 
+st.image("banner2.png", width = 1200) 
 
 # Load data
 import zipfile
