@@ -204,6 +204,7 @@ fig7.update_layout(title={'x': 0.5, 'xanchor': 'center', 'font': {'size': 28}}, 
 
 # Display the plot
 st.plotly_chart(fig7, use_container_width=True)
+
 # Tabs for organizing the visualizations
 tabs = st.tabs(["Overview", "Treatment by Country", "Occupation and Treatment", "Care Barriers", "Stress Analysis"])
 
