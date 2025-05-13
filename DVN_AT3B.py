@@ -202,5 +202,9 @@ fig7 = px.line(
 
 fig7.update_layout(title={'x': 0.5, 'xanchor': 'center', 'font': {'size': 28}}, **COMMON)
 
+# Display the plot
+st.plotly_chart(fig7, use_container_width=True)
+
+
 # Footer
 st.markdown("---")
