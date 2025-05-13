@@ -7,7 +7,9 @@ import os
 
 # Suppress warnings
 import warnings
-warnings.filterwarnings("ignore")
+
+# Suppress the specific deprecation warning for use_column_width
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Page config
 st.set_page_config(layout="wide")
