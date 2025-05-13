@@ -205,6 +205,26 @@ fig7.update_layout(title={'x': 0.5, 'xanchor': 'center', 'font': {'size': 28}}, 
 # Display the plot
 st.plotly_chart(fig7, use_container_width=True)
 
+# Tabs for organizing the visualizations
+tabs = st.tabs(["Overview", "Treatment by Country", "Occupation and Treatment", "Care Barriers", "Stress Analysis"])
+
+# Content for each tab
+with tabs[0]:
+    st.plotly_chart(fig1, use_container_width=True)
+    st.plotly_chart(fig2, use_container_width=True)
+
+with tabs[1]:
+    st.plotly_chart(fig5, use_container_width=True)
+
+with tabs[2]:
+    st.plotly_chart(fig3, use_container_width=True)
+
+with tabs[3]:
+    st.plotly_chart(fig4, use_container_width=True)
+
+with tabs[4]:
+    st.plotly_chart(fig6, use_container_width=True)
+    st.plotly_chart(fig7, use_container_width=True)
 
 # Footer
 st.markdown("---")
