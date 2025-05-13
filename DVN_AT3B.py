@@ -202,17 +202,5 @@ fig7 = px.line(
 
 fig7.update_layout(title={'x': 0.5, 'xanchor': 'center', 'font': {'size': 28}}, **COMMON)
 
-# Display the plot
-st.plotly_chart(fig7, use_container_width=True)
-
-# Instead of using tabs, display visuals sequentially:
-st.plotly_chart(fig1, use_container_width=True, key="fig1_overview")
-st.plotly_chart(fig2, use_container_width=True, key="fig2_overview")
-st.plotly_chart(fig5, use_container_width=True, key="fig5_country_analysis")
-st.plotly_chart(fig3, use_container_width=True, key="fig3_occupation_treatment")
-st.plotly_chart(fig4, use_container_width=True, key="fig4_care_barriers")
-st.plotly_chart(fig6, use_container_width=True, key="fig6_stress_by_days_indoor")
-st.plotly_chart(fig7, use_container_width=True, key="fig7_stress_by_isolation")
-
 # Footer
 st.markdown("---")
