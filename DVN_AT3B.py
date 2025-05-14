@@ -125,11 +125,11 @@ fig4.update_layout(title={'x': 0.5, 'xanchor': 'center', 'font': {'size': 26}}, 
 r2c2.plotly_chart(fig4, use_container_width=True)
 
 # ------------------ ROW 3 ------------------ #
-st.markdown("### Average Stress Score by Country")
 sa = filtered.groupby('Country')['Stress_Score_Balanced'].mean().reset_index(name='avg')
 sa['avg'] = sa['avg'].round(2)
 fig5 = px.treemap(
     sa, path=['Country'], values='avg', color='avg',
+    title='Average Stress Score by Country',
     color_continuous_scale='YlGnBu',
     hover_data={'avg': ':.2f'},
     labels={'avg': 'Avg Stress Score'}
