@@ -94,10 +94,10 @@ stack_data['Treatment_Status'] = stack_data['Treatment_Encoded'].map({0: 'Not Tr
 
 fig2 = px.bar(
     stack_data, x='Occupation', y='count', color='Self_employed',
-    facet_col='Treatment_Encoded', barmode='stack',
+    facet_col='Treatment_Status', barmode='stack',
     title='Occupation & Self-employment by Treatment',
-    labels={'count': 'Count', 'Self_employed': 'Self-employed', 'Treatment_Encoded': 'Treatment'}
-)
+    labels={'count': 'Count', 'Self_employed': 'Self-employed?', 'Treatment_Status': 'Treatment'})
+
 fig2.for_each_annotation(lambda a: a.update(text=a.text.split('=')[-1]))
 fig2.update_layout(title={'x': 0.5, 'xanchor': 'center', 'font': {'size': 26}}, **COMMON)
 r1c2.plotly_chart(fig2, use_container_width=True)
