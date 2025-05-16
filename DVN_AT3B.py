@@ -88,6 +88,10 @@ r1c1.plotly_chart(fig1, use_container_width=True)
 
 # Occupation & Self-employment by Treatment
 stack_data = filtered.groupby(['Occupation', 'Self_employed', 'Treatment_Encoded']).size().reset_index(name='count')
+
+# Map 0 and 1 as “Not Treated” and “Treated”
+stack_data['Treatment_Status'] = stack_data['Treatment_Encoded'].map({0: 'Not Treated',1: 'Treated'})
+
 fig2 = px.bar(
     stack_data, x='Occupation', y='count', color='Self_employed',
     facet_col='Treatment_Encoded', barmode='stack',
